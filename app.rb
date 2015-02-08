@@ -97,7 +97,7 @@ class App < Sinatra::Base
       f.html do
         erb :citation, locals: {citation: citation}
       end
-    end    
+    end
   end
 
 end
