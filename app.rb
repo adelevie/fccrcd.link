@@ -19,7 +19,7 @@ end
 
 def get_or_create_citation(volume: nil, page: nil)
   # Example citation: 22 FCC Rcd 17791
-  citation = Citation.where(volume: volume, page: page).find
+  citation = Citation.where(volume: volume, page: page).first
   
   if citation
     return citation
