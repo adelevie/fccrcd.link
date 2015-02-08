@@ -1,0 +1,38 @@
+<article>
+  <header>
+    <h2 id="citation"><%= citation[:volume] %> FCC Rcd <%= citation[:page] %></h2>
+    <p id="date"><%=  citation[:date] %></p>
+  </header>
+  <section>
+    <h3 id="title"><%= citation[:title] %></h3>
+    <p id="description"><%= citation[:description] %></p>
+  </section>
+  <section>
+    <h3>PDF</h3>
+    <ul id="pdf">
+      <% citation[:pdf].each do |pdf| %>
+        <li><a href="<%= pdf %>"><%= pdf %></a></li>
+      <% end %>
+    </ul>
+    
+    <h3>TXT</h3>
+    <ul id="txt">
+      <% citation[:txt].each do |txt| %>
+        <li><a href="<%= txt %>"><%= txt %></a></li>
+      <% end %>
+    </ul>
+    
+    <h3>DOC</h3>
+    <ul id="doc">
+      <% citation[:doc].each do |doc| %>
+        <li><a href="<%= doc %>"><%= doc %></a></li>
+      <% end %>
+    </ul>
+  </section>
+  <section>
+    <h3>JSON</h3>
+    <pre id="json_sample">
+curl -H 'Accept: application/json' <%= url("#{citation[:volume]}/#{citation[:page]}") %> | python -m json.tool
+    </pre>
+  </section>
+</article>

@@ -6,6 +6,18 @@ Example citation: 22 FCC Rcd 17791
 
 Corresponding URL: https://fccrcd.link/22/17791
 
+JSON API: 
+
+```sh
+curl -H 'Accept: application/json' https://fccrcd.link/22/17791
+```
+
+With prettified JSON (requires Python): 
+
+```sh
+curl -H 'Accept: application/json' https://fccrcd.link/22/17791 | python -m json.tool
+```
+
 ## FCC Reports
 
 Inclusion TBD.

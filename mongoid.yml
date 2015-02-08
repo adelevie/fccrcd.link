@@ -1,0 +1,12 @@
+development:
+  sessions:
+    default:
+      database: fccrcd_dev
+      hosts:
+        - localhost:27017
+production:
+  sessions:
+    default:
+      database: fccrcd_prod
+      hosts:
+        - localhost:27017
