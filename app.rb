@@ -10,6 +10,8 @@ require 'net/http'
 require 'dotenv'
 Dotenv.load
 
+Mongoid.load!('mongoid.yml')
+
 class Citation
   include Mongoid::Document
 end
