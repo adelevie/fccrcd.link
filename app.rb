@@ -95,6 +95,7 @@ class App < Sinatra::Base
         JSON.generate citation
       end
       f.html do
+        @title = "#{citation[:volume]} FCC Rcd #{citation[:page]}"
         erb :citation, locals: {citation: citation}
       end
     end
