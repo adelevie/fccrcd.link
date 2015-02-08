@@ -14,11 +14,12 @@ Mongoid.load!('mongoid.yml')
 
 class Citation
   include Mongoid::Document
+  include Mongoid::Attributes::Dynamic
 end
 
 def get_or_create_citation(volume: nil, page: nil)
   # Example citation: 22 FCC Rcd 17791
-  citation = Citation.where(volume: volume, page: page)
+  citation = Citation.where(volume: volume, page: page).find
   
   if citation
     return citation
