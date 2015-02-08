@@ -88,7 +88,7 @@ class App < Sinatra::Base
   end
   
   get '/:volume/:page' do
-    citation = get_citation(volume: params[:volume], page: params[:page])
+    citation = get_or_create_citation(volume: params[:volume], page: params[:page])
     
     respond_to do |f|
       f.json do
